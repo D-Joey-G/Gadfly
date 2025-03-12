@@ -1,0 +1,154 @@
+{
+  "terms": [
+    {
+      "term": "Aretē",
+      "definition": "Excellence or virtue; the quality of being the best version of something. For humans, it represents excellence of character and fulfilling one's purpose.",
+      "related_dialogues": ["Meno", "Protagoras", "Republic"]
+    },
+    {
+      "term": "Dialectic",
+      "definition": "Philosophical method involving reasoned discussion between individuals with differing viewpoints, aimed at establishing truth through rational argument.",
+      "related_dialogues": ["Republic", "Sophist", "Parmenides"]
+    },
+    {
+      "term": "Elenchus",
+      "definition": "Socratic method of questioning to stimulate critical thinking, expose contradictions in beliefs, and eliminate false claims to knowledge.",
+      "related_dialogues": ["Euthyphro", "Meno", "Gorgias"]
+    },
+    {
+      "term": "Forms (Eidos)",
+      "definition": "Eternal, unchanging, perfect archetypes that exist beyond the physical world and constitute true reality, of which physical objects are imperfect copies.",
+      "related_dialogues": ["Republic", "Phaedo", "Parmenides"]
+    },
+    {
+      "term": "Phronesis",
+      "definition": "Practical wisdom or prudence; the ability to know which virtuous action is appropriate in a particular situation.",
+      "related_dialogues": ["Republic", "Meno"]
+    },
+    {
+      "term": "Sophia",
+      "definition": "Theoretical wisdom; knowledge of universal truths and first principles.",
+      "related_dialogues": ["Apology", "Phaedrus", "Republic"]
+    },
+    {
+      "term": "Anamnesis",
+      "definition": "Recollection; the theory that learning is actually remembering knowledge that the immortal soul possessed before birth.",
+      "related_dialogues": ["Meno", "Phaedo", "Phaedrus"]
+    },
+    {
+      "term": "Aporia",
+      "definition": "State of puzzlement or impasse; the acknowledgment of not knowing, which Socrates considered the beginning of true inquiry.",
+      "related_dialogues": ["Meno", "Theaetetus", "Euthyphro"]
+    },
+    {
+      "term": "Dikaiosyne",
+      "definition": "Justice or righteousness; giving what is due and fulfilling one's proper role in the social order.",
+      "related_dialogues": ["Republic", "Gorgias"]
+    },
+    {
+      "term": "Episteme",
+      "definition": "Knowledge, especially scientific knowledge based on rational explanation, as opposed to mere belief (doxa).",
+      "related_dialogues": ["Theaetetus", "Meno", "Republic"]
+    },
+    {
+      "term": "Eros",
+      "definition": "Love or desire, especially the yearning for beauty, wisdom, and the good. Can refer to romantic/sexual desire but also philosophical passion.",
+      "related_dialogues": ["Symposium", "Phaedrus"]
+    },
+    {
+      "term": "Logos",
+      "definition": "Reason, rational discourse, or the principle of order and knowledge. The power of the mind to think, reason, and understand.",
+      "related_dialogues": ["Republic", "Theaetetus", "Sophist"]
+    },
+    {
+      "term": "Mimesis",
+      "definition": "Imitation or representation in art; for Plato, artistic representations are often problematic as they imitate physical reality, which itself is an imitation of the Forms.",
+      "related_dialogues": ["Republic", "Ion"]
+    },
+    {
+      "term": "Nous",
+      "definition": "Mind or intellect; the faculty that grasps the intelligible reality of the Forms.",
+      "related_dialogues": ["Republic", "Timaeus", "Philebus"]
+    },
+    {
+      "term": "Psyche",
+      "definition": "Soul; the immortal, essential, and rational part of a person, divided in the Republic into reason, spirit, and appetite.",
+      "related_dialogues": ["Phaedo", "Republic", "Phaedrus"]
+    },
+    {
+      "term": "Sophrosyne",
+      "definition": "Temperance, moderation, or self-control; harmony of the soul where reason governs the appetites.",
+      "related_dialogues": ["Charmides", "Republic", "Phaedrus"]
+    },
+    {
+      "term": "Techne",
+      "definition": "Craft, art, or skill based on knowledge of specific principles, as distinguished from mere routine or knack.",
+      "related_dialogues": ["Gorgias", "Ion", "Republic"]
+    },
+    {
+      "term": "Doxa",
+      "definition": "Opinion or belief; a conviction that falls short of knowledge because it lacks rational justification.",
+      "related_dialogues": ["Republic", "Theaetetus", "Meno"]
+    },
+    {
+      "term": "Demiurge",
+      "definition": "The divine craftsman who created the physical universe by imposing mathematical order on chaotic matter, according to the model of the eternal Forms.",
+      "related_dialogues": ["Timaeus"]
+    },
+    {
+      "term": "Eudaimonia",
+      "definition": "Happiness, well-being, or human flourishing; not a feeling but the state of living well and doing well according to virtue.",
+      "related_dialogues": ["Republic", "Gorgias", "Philebus"]
+    },
+    {
+      "term": "Methexis",
+      "definition": "Participation; the relationship between physical objects and the Forms, where particulars 'participate in' or 'partake of' their corresponding Forms.",
+      "related_dialogues": ["Parmenides", "Phaedo", "Republic"]
+    },
+    {
+      "term": "Mētis",
+      "definition": "Cunning intelligence or practical cleverness, often contrasted with philosophical wisdom.",
+      "related_dialogues": ["Protagoras", "Republic"]
+    },
+    {
+      "term": "Ousia",
+      "definition": "Being, essence, or substance; what makes something what it is fundamentally.",
+      "related_dialogues": ["Sophist", "Parmenides", "Republic"]
+    },
+    {
+      "term": "Paideia",
+      "definition": "Education or character formation; the process of cultivating virtues and knowledge to develop the whole person.",
+      "related_dialogues": ["Republic", "Laws", "Protagoras"]
+    },
+    {
+      "term": "Philia",
+      "definition": "Friendship or brotherly love; affectionate regard for others that can form the basis of community.",
+      "related_dialogues": ["Lysis", "Symposium"]
+    },
+    {
+      "term": "Thumos",
+      "definition": "Spirit or spiritedness; the emotional or passionate element of the soul associated with courage, honor, and righteous indignation.",
+      "related_dialogues": ["Republic", "Phaedrus"]
+    },
+    {
+      "term": "Agathon",
+      "definition": "The Good; the supreme Form that gives existence and knowability to all other Forms, comparable to the sun in the physical world.",
+      "related_dialogues": ["Republic", "Philebus"]
+    },
+    {
+      "term": "Chōra",
+      "definition": "Space or receptacle; the formless matrix that receives all physical forms, likened to a mother or nurse of becoming.",
+      "related_dialogues": ["Timaeus"]
+    },
+    {
+      "term": "Kalon",
+      "definition": "Beauty or the beautiful; aesthetic excellence that elicits love and leads the soul toward the Forms.",
+      "related_dialogues": ["Symposium", "Phaedrus", "Hippias Major"]
+    },
+    {
+      "term": "Aletheia",
+      "definition": "Truth or disclosure; the unconcealment or revelation of reality as it is.",
+      "related_dialogues": ["Republic", "Sophist", "Theaetetus"]
+    }
+  ]
+}

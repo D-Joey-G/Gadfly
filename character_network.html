@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hyper-Platonic Forum - Character Network</title>
+  <link rel="stylesheet" href="enhanced_forum_style.css">
+  <style>
+    .network-container {
+      margin: 20px;
+      background-color: #FCFCFC;
+      border: 1px solid #DDD;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    
+    .network-controls {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+      background-color: #F0F0F0;
+      border-bottom: 1px solid #DDD;
+    }
+    
+    .view-controls, .filter-controls {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+    
+    .filter-select {
+      padding: 5px 10px;
+      border: 1px solid #CCC;
+      border-radius: 3px;
+      font-size: 13px;
+    }
+    
+    .view-button {
+      padding: 5px 10px;
+      background: linear-gradient(to bottom, #E5E5E5, #D5D5D5);
+      border: 1px solid #CCC;
+      border-radius: 3px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    
+    .view-button.active {
+      background: linear-gradient(to bottom, var(--primary-dark), var(--accent-dark));
+      color: white;
+      border-color: var(--accent-dark);
+    }
+    
+    .network-view {
+      height: 600px;
+      position: relative;
+    }
+    
+    .network-canvas {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .character-info-panel {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 250px;
+      background-color: white;
+      border: 1px solid #DDD;
+      border-radius: 5px;
+      padding: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 10;
+      display: none;
+    }
+    
+    .character-info-panel.visible {
+      display: block;
+    }
+    
+    .character-avatar {
+      width: 50px;
+      height: 50px;
+      float: left;
+      margin-right: 10px;
+      border: 1px solid #CCC;
+      border-radius: 25px;
+      background-color: #F0F0F0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 9px;
+      overflow: hidden;
+    }
+    
+    .character-details {
+      overflow: hidden;
+    }
+    
+    .character-name {
+      font-weight: bold;
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+    
+    .character-title {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+    
+    .character-bio {
+      clear: both;
+      font-size: 12px;
+      line-height: 1.5;
+      margin-top: 10px;
+      color: #333;
+    }
+    
+    .relationship-list {
+      margin-top: 15px;
+      font-size: 12px;
+    }
+    
+    .relationship-list h4 {
+      margin-bottom: 5px;
+      font-size: 13px;
+      border-bottom: 1px solid #EEE;
+      padding-bottom: 3px;
+    }
+    
+    .relationship-list ul {
+      padding-left: 15px;
+      margin: 5px 0;
+    }
+    
+    .relationship-list li {
+      margin-bottom: 3px;
+    }
+    
+    .network-legend {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border: 1px solid #DDD;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 12px;
+    }
+    
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+    
+    .legend-color {
+      width: 15px;
+      height: 15px;
+      margin-right: 5px;
+      border-radius: 2px;
+    }
+    
+    .loading-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(255, 255, 255, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 20;
+    }
+    
+    .loader {
+      width: 40px;
+      height: 40px;
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid var(--primary-dark);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="forum-container">
+    <div class="forum-header">
+      <div class="breadcrumbs">
+        <a href="index.html">Hyper-Platonic Forum</a> &raquo; 
+        <a href="#">Character Network</a>
+      </div>
+      <h1 class="forum-title">Character Relationship Network</h1>
+      <div class="forum-description">Explore the connections between characters across Plato's dialogues</div>
+    </div>
+    
+    <div class="forum-info">
+      <div>Current time: <b>399 BCE, Month of Thargelion</b></div>
+      <div>Forum rules | FAQ | <a href="search.html">Search</a></div>
+    </div>
+    
+    <div class="network-container">
+      <div class="network-controls">
+        <div class="filter-controls">
+          <label for="dialogue-filter">Filter by Dialogue:</label>
+          <select id="dialogue-filter" class="filter-select">
+            <option value="all">All Dialogues</option>
+            <option value="republic">Republic</option>
+            <option value="symposium">Symposium</option>
+            <option value="phaedo">Phaedo</option>
+            <option value="apology">Apology</option>
+            <option value="gorgias">Gorgias</option>
+          </select>
+          
+          <label for="relationship-filter">Relationship Type:</label>
+          <select id="relationship-filter" class="filter-select">
+            <option value="all">All Relationships</option>
+            <option value="teacher">Teacher-Student</option>
+            <option value="friend">Friendship</option>
+            <option value="opposition">Opposition</option>
+            <option value="family">Family</option>
+          </select>
+        </div>
+        
+        <div class="view-controls">
+          <button id="view-network" class="view-button active">Network</button>
+          <button id="view-timeline" class="view-button">Timeline</button>
+          <button id="view-matrix" class="view-button">Matrix</button>
+        </div>
+      </div>
+      
+      <div class="network-view">
+        <canvas id="network-canvas" class="network-canvas"></canvas>
+        
+        <div id="character-info" class="character-info-panel">
+          <div class="character-avatar" id="character-avatar"></div>
+          <div class="character-details">
+            <div class="character-name" id="character-name">Socrates</div>
+            <div class="character-title" id="character-title">Philosopher of Athens</div>
+          </div>
+          <div class="character-bio" id="character-bio">
+            Athenian philosopher (470-399 BCE) known for his dialectical method of questioning. Son of a stonemason who spent his life examining himself and others in pursuit of wisdom.
+          </div>
+          <div class="relationship-list">
+            <h4>Appears With:</h4>
+            <ul id="relationship-list">
+              <li>Plato (23 dialogues)</li>
+              <li>Glaucon (Republic, Symposium)</li>
+              <li>Thrasymachus (Republic)</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="network-legend">
+          <h4>Legend</h4>
+          <div class="legend-item">
+            <div class="legend-color" style="background-color: #8B5A2B;"></div>
+            <span>Philosophers</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background-color: #6699BB;"></div>
+            <span>Sophists</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color" style="background-color: #999;"></div>
+            <span>Others</span>
+          </div>
+          <div class="legend-item">
+            <div style="height: 2px; width: 15px; background-color: #000; margin-right: 5px;"></div>
+            <span>Appears in same dialogue</span>
+          </div>
+          <div class="legend-item">
+            <div style="height: 2px; width: 15px; background-color: #000; margin-right: 5px; border-top: 1px dashed #000;"></div>
+            <span>Oppositional relationship</span>
+          </div>
+        </div>
+        
+        <div id="loading-overlay" class="loading-overlay">
+          <div class="loader"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="stats-box">
+      <h3>Network Statistics</h3>
+      <div><strong>Characters:</strong> 65</div>
+      <div><strong>Relationships:</strong> 187</div>
+      <div><strong>Central Character:</strong> Socrates (connected to 43 others)</div>
+      <div><strong>Most Frequent Pairing:</strong> Socrates and Glaucon (9 dialogues)</div>
+    </div>
+    
+    <div class="forum-footer">
+      Hyper-Platonic Forum &copy; 399 BCE - 2025 CE &bull; Powered by vPlatonicBB
+    </div>
+  </div>
+  
+  <script src="tooltip_integration.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+  <script src="character_network.js"></script>
+</body>
+</html>

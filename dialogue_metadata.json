@@ -1,0 +1,204 @@
+{
+  "dialogues": [
+    {
+      "title": "Apology",
+      "date": "399 BCE",
+      "category": "Ethics",
+      "summary": "Socrates defends himself against charges of impiety and corrupting the youth, explaining his philosophical mission and refusing to abandon his pursuit of wisdom even when faced with death.",
+      "location": "The Court of Athens",
+      "philosophical_themes": ["Justice", "Virtue", "Wisdom", "Death"]
+    },
+    {
+      "title": "Crito",
+      "date": "399 BCE",
+      "category": "Ethics",
+      "summary": "Socrates, awaiting execution, debates with his friend Crito about whether he should escape from prison, ultimately arguing that he must obey the laws of Athens even when they are unjustly applied.",
+      "location": "The Prison of Athens",
+      "philosophical_themes": ["Justice", "Duty", "Civil Obedience", "Ethics"]
+    },
+    {
+      "title": "Euthyphro",
+      "date": "399 BCE",
+      "category": "Ethics",
+      "summary": "Before his trial, Socrates encounters Euthyphro at the courthouse and questions him about the nature of piety, revealing the difficulties in defining moral concepts and presenting the famous 'Euthyphro dilemma'.",
+      "location": "The Porch of the King Archon",
+      "philosophical_themes": ["Piety", "Definition", "Ethics", "Religion"]
+    },
+    {
+      "title": "Phaedo",
+      "date": "399 BCE",
+      "category": "Metaphysics",
+      "summary": "On his final day, Socrates discusses the immortality of the soul with his followers, presenting various arguments for why the soul continues after death and explaining his peaceful acceptance of his fate.",
+      "location": "The Prison of Athens",
+      "philosophical_themes": ["Soul", "Immortality", "Death", "Forms"]
+    },
+    {
+      "title": "Meno",
+      "date": "402 BCE",
+      "category": "Epistemology",
+      "summary": "Socrates explores whether virtue can be taught, introducing the theory of recollection with his famous geometrical demonstration with a slave boy, suggesting knowledge is remembered rather than learned.",
+      "location": "Athens",
+      "philosophical_themes": ["Virtue", "Knowledge", "Learning", "Recollection"]
+    },
+    {
+      "title": "Gorgias",
+      "date": "405 BCE",
+      "category": "Ethics",
+      "summary": "In debate with the rhetorician Gorgias and his followers, Socrates criticizes rhetoric as mere flattery rather than a true craft, arguing that justice is preferable to power and suffering injustice better than committing it.",
+      "location": "A House in Athens",
+      "philosophical_themes": ["Rhetoric", "Justice", "Power", "Good Life"]
+    },
+    {
+      "title": "Protagoras",
+      "date": "433 BCE",
+      "category": "Ethics",
+      "summary": "Socrates meets the famous sophist Protagoras and debates whether virtue can be taught, exploring the unity of virtues and challenging conventional wisdom about education and moral development.",
+      "location": "The House of Callias",
+      "philosophical_themes": ["Virtue", "Education", "Sophistry", "Knowledge"]
+    },
+    {
+      "title": "Symposium",
+      "date": "416 BCE",
+      "category": "Love and Relationships",
+      "summary": "At a drinking party, guests including Socrates deliver speeches in praise of love (Eros), culminating in Socrates' recounting of Diotima's teaching that love is the desire for everlasting possession of the good.",
+      "location": "The House of Agathon",
+      "philosophical_themes": ["Love", "Beauty", "Desire", "Ascent"]
+    },
+    {
+      "title": "Phaedrus",
+      "date": "370 BCE",
+      "category": "Love and Relationships",
+      "summary": "Outside the city walls, Socrates and Phaedrus discuss love, rhetoric, and writing, with Socrates delivering famous speeches about love's madness and presenting a critique of written versus spoken discourse.",
+      "location": "Banks of the Ilissus River",
+      "philosophical_themes": ["Love", "Beauty", "Rhetoric", "Writing"]
+    },
+    {
+      "title": "Republic",
+      "date": "380 BCE",
+      "category": "Politics",
+      "summary": "Socrates and companions construct an ideal city-state to discover the nature of justice, exploring the philosopher-king, the theory of Forms, the divided line, the allegory of the cave, and the nature of the good life.",
+      "location": "The House of Cephalus in Piraeus",
+      "philosophical_themes": ["Justice", "Politics", "Education", "Forms"]
+    },
+    {
+      "title": "Theaetetus",
+      "date": "369 BCE",
+      "category": "Epistemology",
+      "summary": "Socrates examines various definitions of knowledge with the mathematically-gifted Theaetetus, refuting theories that knowledge is perception, true belief, or true belief with an account.",
+      "location": "Athens",
+      "philosophical_themes": ["Knowledge", "Perception", "Truth", "Being"]
+    },
+    {
+      "title": "Timaeus",
+      "date": "355 BCE",
+      "category": "Metaphysics",
+      "summary": "Following a discussion about the ideal state, Timaeus presents an elaborate cosmological account of the universe's creation by a divine craftsman (Demiurge) according to eternal mathematical principles.",
+      "location": "Athens",
+      "philosophical_themes": ["Cosmology", "Creation", "Physics", "Mathematics"]
+    },
+    {
+      "title": "Parmenides",
+      "date": "450 BCE",
+      "category": "Metaphysics",
+      "summary": "The young Socrates meets the revered philosopher Parmenides, who critiques Socrates' early theory of Forms and then demonstrates a complex dialectical method through a series of hypotheses about the One.",
+      "location": "Athens",
+      "philosophical_themes": ["Forms", "Unity", "Being", "Dialectic"]
+    },
+    {
+      "title": "Sophist",
+      "date": "360 BCE",
+      "category": "Metaphysics",
+      "summary": "An Eleatic Stranger leads a dialectical investigation to define the sophist, confronting problems of non-being and falsity, and ultimately distinguishing the genuine philosopher from the sophist.",
+      "location": "Athens",
+      "philosophical_themes": ["Being", "Non-being", "Definition", "Falsity"]
+    },
+    {
+      "title": "Statesman",
+      "date": "360 BCE",
+      "category": "Politics",
+      "summary": "Following the Sophist, the Eleatic Stranger continues his dialectical method to define the true statesman, exploring constitutional forms, political expertise, and the science of governance.",
+      "location": "Athens",
+      "philosophical_themes": ["Politics", "Expertise", "Governance", "Moderation"]
+    },
+    {
+      "title": "Laws",
+      "date": "350 BCE",
+      "category": "Politics",
+      "summary": "Plato's longest dialogue presents a detailed legislative framework for a new colony, offering a more practical political vision than the Republic, with extensive discussion of education, religion, and civic life.",
+      "location": "Crete",
+      "philosophical_themes": ["Law", "Justice", "Religion", "Education"]
+    },
+    {
+      "title": "Cratylus",
+      "date": "388 BCE",
+      "category": "Language",
+      "summary": "Socrates mediates a debate about whether names are natural or conventional, examining numerous etymologies and ultimately suggesting that knowledge of reality must come from things themselves rather than names.",
+      "location": "Athens",
+      "philosophical_themes": ["Language", "Names", "Etymology", "Reality"]
+    },
+    {
+      "title": "Lysis",
+      "date": "409 BCE",
+      "category": "Love and Relationships",
+      "summary": "Socrates discusses friendship with young men, examining various theories about what constitutes true friendship and whether it is based on similarity, difference, or the pursuit of the good.",
+      "location": "A Wrestling School in Athens",
+      "philosophical_themes": ["Friendship", "Love", "Desire", "Good"]
+    },
+    {
+      "title": "Charmides",
+      "date": "429 BCE",
+      "category": "Ethics",
+      "summary": "Socrates discusses temperance (sophrosyne) with the beautiful youth Charmides and his guardian Critias, examining definitions including self-knowledge and 'knowing what you know and don't know'.",
+      "location": "A Wrestling School in Athens",
+      "philosophical_themes": ["Temperance", "Self-knowledge", "Virtue", "Definition"]
+    },
+    {
+      "title": "Laches",
+      "date": "424 BCE",
+      "category": "Ethics",
+      "summary": "Socrates and two generals, Laches and Nicias, discuss the nature of courage with fathers seeking education for their sons, revealing the difficulties in defining virtues and the importance of expertise.",
+      "location": "Athens",
+      "philosophical_themes": ["Courage", "Virtue", "Education", "Expertise"]
+    },
+    {
+      "title": "Ion",
+      "date": "413 BCE",
+      "category": "Art",
+      "summary": "Socrates challenges the rhapsode Ion about his supposed expertise, concluding that poetic inspiration comes not from knowledge but divine possession, raising questions about the nature of art and knowledge.",
+      "location": "Athens",
+      "philosophical_themes": ["Poetry", "Inspiration", "Knowledge", "Art"]
+    },
+    {
+      "title": "Menexenus",
+      "date": "386 BCE",
+      "category": "Rhetoric",
+      "summary": "Socrates recites a funeral oration he claims to have learned from Aspasia, parodying conventional Athenian patriotic speeches while raising serious questions about rhetoric and historical memory.",
+      "location": "Athens",
+      "philosophical_themes": ["Rhetoric", "Patriotism", "History", "Politics"]
+    },
+    {
+      "title": "Euthydemus",
+      "date": "395 BCE",
+      "category": "Logic",
+      "summary": "Socrates witnesses two sophistic brothers using eristic arguments to confound their listeners, contrasting their deceptive tactics with genuine philosophical inquiry and the pursuit of wisdom.",
+      "location": "A Gymnasium in Athens",
+      "philosophical_themes": ["Fallacies", "Logic", "Sophistry", "Education"]
+    },
+    {
+      "title": "Philebus",
+      "date": "360 BCE",
+      "category": "Ethics",
+      "summary": "Socrates discusses whether pleasure or knowledge constitutes the good life, ultimately developing a nuanced view that the best life combines elements of both under the governance of reason and measure.",
+      "location": "Athens",
+      "philosophical_themes": ["Pleasure", "Knowledge", "Good Life", "Metaphysics"]
+    },
+    {
+      "title": "Critias",
+      "date": "355 BCE",
+      "category": "Politics",
+      "summary": "Following the Timaeus, Critias begins to tell the story of ancient Athens and its war with Atlantis, but the dialogue remains unfinished, leaving only the description of Atlantis's geography and governance.",
+      "location": "Athens",
+      "philosophical_themes": ["History", "Ideal State", "Justice", "War"]
+    }
+  ]
+}

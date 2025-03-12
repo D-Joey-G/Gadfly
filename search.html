@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hyper-Platonic Forum - Search</title>
+  <link rel="stylesheet" href="enhanced_forum_style.css">
+  <style>
+    .search-box {
+      margin: 20px;
+      padding: 15px;
+      background-color: #F5F5F5;
+      border: 1px solid #DDD;
+      border-radius: 5px;
+    }
+    
+    .search-form {
+      display: flex;
+      margin-bottom: 15px;
+    }
+    
+    .search-input {
+      flex: 1;
+      padding: 8px 12px;
+      border: 1px solid #CCC;
+      border-radius: 3px;
+      margin-right: 10px;
+      font-size: 14px;
+    }
+    
+    .search-button {
+      padding: 8px 15px;
+      background: linear-gradient(to bottom, var(--primary-dark), var(--accent-dark));
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    
+    .search-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+    
+    .search-option {
+      display: flex;
+      align-items: center;
+    }
+    
+    .search-option label {
+      margin-left: 5px;
+      font-size: 13px;
+    }
+    
+    .search-results {
+      margin: 20px;
+    }
+    
+    .result-item {
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: #FCFCFC;
+      border: 1px solid #EEE;
+      border-radius: 5px;
+    }
+    
+    .result-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .result-title a {
+      color: var(--highlight);
+      text-decoration: none;
+    }
+    
+    .result-title a:hover {
+      text-decoration: underline;
+    }
+    
+    .result-context {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+    
+    .result-excerpt {
+      font-size: 13px;
+      line-height: 1.5;
+      border-left: 3px solid #DDD;
+      padding-left: 10px;
+      margin-bottom: 10px;
+    }
+    
+    .result-excerpt mark {
+      background-color: rgba(102, 153, 187, 0.2);
+      padding: 1px 3px;
+      border-radius: 2px;
+    }
+    
+    .result-meta {
+      font-size: 12px;
+      color: #777;
+    }
+    
+    .no-results {
+      padding: 20px;
+      text-align: center;
+      color: #666;
+      font-style: italic;
+    }
+    
+    .loading-indicator {
+      display: none;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .search-filters {
+      margin-top: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .filter-group {
+      border: 1px solid #DDD;
+      border-radius: 3px;
+      padding: 10px;
+      flex: 1;
+      min-width: 200px;
+    }
+    
+    .filter-group h4 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #555;
+    }
+    
+    .filter-option {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+    
+    .filter-option label {
+      margin-left: 5px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="forum-container">
+    <div class="forum-header">
+      <div class="breadcrumbs">
+        <a href="index.html">Hyper-Platonic Forum</a> &raquo; 
+        <a href="#">Search</a>
+      </div>
+      <h1 class="forum-title">Search Dialogues</h1>
+      <div class="forum-description">Search across all of Plato's dialogues for specific terms, characters, or philosophical concepts</div>
+    </div>
+    
+    <div class="forum-info">
+      <div>Current time: <b>399 BCE, Month of Thargelion</b></div>
+      <div>Forum rules | FAQ | <b>Search</b></div>
+    </div>
+    
+    <div class="search-box">
+      <div class="search-form">
+        <input type="text" id="search-input" class="search-input" placeholder="Enter search terms..." aria-label="Search terms">
+        <button id="search-button" class="search-button">Search</button>
+      </div>
+      
+      <div class="search-options">
+        <div class="search-option">
+          <input type="radio" id="search-all" name="search-type" value="all" checked class="greek-radio">
+          <label for="search-all">All Content</label>
+        </div>
+        <div class="search-option">
+          <input type="radio" id="search-speaker" name="search-type" value="speaker" class="greek-radio">
+          <label for="search-speaker">By Speaker</label>
+        </div>
+        <div class="search-option">
+          <input type="radio" id="search-concept" name="search-type" value="concept" class="greek-radio">
+          <label for="search-concept">Philosophical Concepts</label>
+        </div>
+      </div>
+      
+      <div class="search-filters">
+        <div class="filter-group">
+          <h4>Filter by Category</h4>
+          <div class="filter-option">
+            <input type="checkbox" id="filter-ethics" value="ethics" class="greek-checkbox" checked>
+            <label for="filter-ethics">Ethics</label>
+          </div>
+          <div class="filter-option">
+            <input type="checkbox" id="filter-metaphysics" value="metaphysics" class="greek-checkbox" checked>
+            <label for="filter-metaphysics">Metaphysics</label>
+          </div>
+          <div class="filter-option">
+            <input type="checkbox" id="filter-epistemology" value="epistemology" class="greek-checkbox" checked>
+            <label for="filter-epistemology">Epistemology</label>
+          </div>
+          <div class="filter-option">
+            <input type="checkbox" id="filter-politics" value="politics" class="greek-checkbox" checked>
+            <label for="filter-politics">Politics</label>
+          </div>
+          <div class="filter-option">
+            <input type="checkbox" id="filter-love" value="love" class="greek-checkbox" checked>
+            <label for="filter-love">Love and Relationships</label>
+          </div>
+        </div>
+        
+        <div class="filter-group">
+          <h4>Filter by Time Period</h4>
+          <div class="filter-option">
+            <input type="checkbox" id="filter-early" value="early" class="greek-checkbox" checked>
+            <label for="filter-early">Early Dialogues (450-420 BCE)</label>
+          </div>
+          <div class="filter-option">
+            <input type="checkbox" id="filter-middle" value="middle" class="greek-checkbox" checked>
+            <label for="filter-middle">Middle Dialogues (420-385 BCE)</label>
+          </div>
+          <div class="filter-option">
+            <input type="checkbox" id="filter-late" value="late" class="greek-checkbox" checked>
+            <label for="filter-late">Late Dialogues (385-347 BCE)</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="loading-indicator" id="loading-indicator">
+      <div class="greek-icon-wrapper"><span class="greek-icon icon-scroll"></span></div>
+      Searching through ancient wisdom...
+    </div>
+    
+    <div class="search-results" id="search-results">
+      <!-- Results will be populated via JavaScript -->
+      <div class="no-results">
+        Enter search terms above to begin your philosophical inquiry
+      </div>
+    </div>
+    
+    <div class="forum-footer">
+      Hyper-Platonic Forum &copy; 399 BCE - 2025 CE &bull; Powered by vPlatonicBB
+    </div>
+  </div>
+  
+  <script src="tooltip_integration.js"></script>
+  <script src="search_functionality.js"></script>
+</body>
+</html>

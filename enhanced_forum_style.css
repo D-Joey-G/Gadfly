@@ -1,0 +1,548 @@
+/* Hyper-Platonic Enhanced Forum Styling */
+
+:root {
+  --primary-dark: #8B5A2B;
+  --primary-light: #E5DED6;
+  --accent-dark: #6E4C23;
+  --accent-light: #F5F5F5;
+  --text-dark: #333;
+  --text-light: #DDD;
+  --border-color: #999;
+  --highlight: #6699BB;
+  --ancient-red: #993333;
+  --ancient-black: #1A1A1A;
+  --ancient-white: #FFFFF0;
+}
+
+body {
+  font-family: "Verdana", sans-serif;
+  background-color: var(--primary-light);
+  color: var(--text-dark);
+  margin: 0;
+  padding: 20px;
+  line-height: 1.5;
+  background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%238B5A2B" stroke-width="2" stroke-opacity="0.1" stroke-dasharray="5,5"/></svg>');
+}
+
+/* Greek Key Border Pattern */
+.greek-border {
+  border: 1px solid var(--border-color);
+  border-image: url('data:image/svg+xml;utf8,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 H40 V10 H30 V20 H40 V30 H30 V40 H20 V30 H10 V40 H0 V30 H10 V20 H0 V10 H10 V0 H20 V10 H30 V0 Z" fill="none" stroke="%238B5A2B" stroke-width="2"/></svg>') 20 stretch;
+  border-width: 10px;
+}
+
+.forum-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--accent-light);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+/* Forum Header with Greek Columns */
+.forum-header {
+  background: linear-gradient(to bottom, var(--primary-dark), var(--accent-dark));
+  color: white;
+  padding: 10px 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: 1px solid var(--text-dark);
+  position: relative;
+}
+
+.forum-header::before,
+.forum-header::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 100%;
+  top: 0;
+  background-image: url('data:image/svg+xml;utf8,<svg width="30" height="60" viewBox="0 0 30 60" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="0" width="20" height="5" fill="%23DDD"/><rect x="5" y="55" width="20" height="5" fill="%23DDD"/><rect x="7" y="5" width="16" height="50" fill="%23DDD"/><rect x="9" y="5" width="2" height="50" fill="%236E4C23"/><rect x="19" y="5" width="2" height="50" fill="%236E4C23"/></svg>');
+  background-repeat: repeat-y;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.forum-header::before {
+  left: 0;
+}
+
+.forum-header::after {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.breadcrumbs {
+  font-size: 12px;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.breadcrumbs a {
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+  color: var(--ancient-white);
+}
+
+.forum-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.forum-description {
+  font-size: 12px;
+  margin-top: 5px;
+  color: var(--text-light);
+  position: relative;
+  z-index: 2;
+}
+
+/* Category styling with Greek elements */
+.category {
+  border-bottom: 1px solid #CCC;
+  margin-bottom: 20px;
+}
+
+.category-header {
+  background: linear-gradient(to bottom, #E5E5E5, #D5D5D5);
+  padding: 8px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--text-dark);
+  border: 1px solid #CCC;
+  border-left: none;
+  border-right: none;
+  position: relative;
+}
+
+.category-header::before {
+  content: "🏛️";
+  margin-right: 8px;
+}
+
+/* Thread list styling */
+.thread-list {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.thread-list tr:hover {
+  background-color: rgba(230, 219, 209, 0.3);
+}
+
+.thread-list td {
+  padding: 10px 15px;
+  border-bottom: 1px solid #EEE;
+  font-size: 12px;
+}
+
+.thread-list .thread-icon {
+  width: 24px;
+  text-align: center;
+}
+
+.thread-list .thread-title {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.thread-list .thread-title a {
+  color: var(--highlight);
+  text-decoration: none;
+}
+
+.thread-list .thread-title a:hover {
+  text-decoration: underline;
+}
+
+.thread-list .thread-description {
+  color: #666;
+  font-style: italic;
+  margin-top: 3px;
+}
+
+.thread-list .thread-starter {
+  width: 120px;
+  color: #444;
+}
+
+.thread-list .thread-stats {
+  width: 80px;
+  text-align: center;
+  color: #555;
+  font-size: 11px;
+}
+
+.thread-list .thread-last-post {
+  width: 180px;
+  font-size: 11px;
+  color: #555;
+}
+
+/* Post styling */
+.post {
+  border-bottom: 1px solid #DDD;
+  padding: 15px;
+  display: flex;
+}
+
+.post:nth-child(odd) {
+  background-color: #F9F9F9;
+}
+
+.post-sidebar {
+  flex: 0 0 150px;
+  margin-right: 15px;
+  text-align: center;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  background-color: #DDD;
+  border: 1px solid #AAA;
+  margin: 0 auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  overflow: hidden;
+  color: #666;
+  font-size: 11px;
+  position: relative;
+}
+
+.avatar img {
+  max-width: 100%;
+  height: auto;
+}
+
+.avatar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 H20 V20 H0 Z M40,0 H60 V20 H40 Z M80,0 H100 V20 H80 Z M20,20 H40 V40 H20 Z M60,20 H80 V40 H60 Z M0,40 H20 V60 H0 Z M40,40 H60 V60 H40 Z M80,40 H100 V60 H80 Z M20,60 H40 V80 H20 Z M60,60 H80 V80 H60 Z M0,80 H20 V100 H0 Z M40,80 H60 V100 H40 Z M80,80 H100 V100 H80 Z" fill="%238B5A2B" fill-opacity="0.05"/></svg>');
+  pointer-events: none;
+}
+
+.username {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.user-info {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.user-rank {
+  display: inline-block;
+  background-color: #E5E5E5;
+  padding: 2px 5px;
+  border-radius: 3px;
+  border: 1px solid #CCC;
+  font-size: 11px;
+}
+
+.post-content {
+  flex: 1;
+}
+
+.post-header {
+  background-color: #E5E5E5;
+  padding: 5px 10px;
+  font-size: 12px;
+  border: 1px solid #CCC;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-body {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.post-body .philosophical-term {
+  color: var(--highlight);
+  cursor: help;
+  border-bottom: 1px dotted var(--highlight);
+  position: relative;
+}
+
+.post-body .philosophical-term:hover::after {
+  content: attr(data-definition);
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  background-color: #333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  width: 250px;
+  font-size: 12px;
+  z-index: 100;
+}
+
+.signature {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px dashed #CCC;
+  font-size: 11px;
+  color: #777;
+  font-style: italic;
+}
+
+/* Pagination styling */
+.pagination {
+  background-color: #E5E5E5;
+  padding: 8px 15px;
+  border-top: 1px solid #CCC;
+  font-size: 12px;
+  text-align: right;
+}
+
+.pagination a {
+  display: inline-block;
+  padding: 2px 6px;
+  background-color: #FFF;
+  border: 1px solid #AAA;
+  text-decoration: none;
+  color: #333;
+  margin-left: 5px;
+}
+
+.pagination .current {
+  background-color: var(--primary-dark);
+  color: white;
+  border: 1px solid var(--accent-dark);
+}
+
+/* Forum footer */
+.forum-footer {
+  text-align: center;
+  font-size: 11px;
+  color: #777;
+  padding: 15px;
+  border-top: 1px solid #CCC;
+  background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 H5 V5 H0 Z M5,5 H10 V10 H5 Z M10,0 H15 V5 H10 Z M15,5 H20 V10 H15 Z M0,10 H5 V15 H0 Z M5,15 H10 V20 H5 Z M10,10 H15 V15 H10 Z M15,15 H20 V20 H15 Z" fill="%238B5A2B" fill-opacity="0.05"/></svg>');
+}
+
+/* Forum info bar */
+.forum-info {
+  display: flex;
+  justify-content: space-between;
+  background-color: #F0F0F0;
+  padding: 10px 15px;
+  font-size: 11px;
+  color: #555;
+  border-bottom: 1px solid #DDD;
+}
+
+/* Stats boxes */
+.stats-box {
+  background-color: #FCFCFC;
+  border: 1px solid #DDD;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 15px;
+  font-size: 11px;
+  color: #666;
+}
+
+.stats-box h3 {
+  margin-top: 0;
+  font-size: 12px;
+  color: #333;
+  border-bottom: 1px solid #EEE;
+  padding-bottom: 5px;
+}
+
+.online-users {
+  color: var(--highlight);
+}
+
+/* User reputation indicators */
+.user-reputation {
+  display: flex;
+  justify-content: center;
+  margin: 5px 0;
+}
+
+.reputation-point {
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary-dark);
+  border-radius: 50%;
+  margin: 0 2px;
+}
+
+.reputation-point.silver {
+  background-color: #A9A9A9;
+}
+
+.reputation-point.gold {
+  background-color: #DAA520;
+}
+
+/* Philosophical tooltips */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted var(--highlight);
+  color: var(--highlight);
+  cursor: help;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 250px;
+  background-color: #333;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.tooltip .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Greek iconography */
+.greek-icon-wrapper {
+  display: inline-block;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.greek-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+
+.icon-owl {
+  background-image: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" fill="%238B5A2B" fill-opacity="0.7"/><circle cx="5" cy="6" r="1.5" fill="white"/><circle cx="11" cy="6" r="1.5" fill="white"/><path d="M5,11 C6,12 10,12 11,11" stroke="white" stroke-width="0.5" fill="none"/></svg>');
+}
+
+.icon-column {
+  background-image: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="1" width="8" height="2" fill="%238B5A2B"/><rect x="4" y="13" width="8" height="2" fill="%238B5A2B"/><rect x="5" y="3" width="6" height="10" fill="%238B5A2B"/></svg>');
+}
+
+.icon-scroll {
+  background-image: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M3,3 C3,1 13,1 13,3 L13,12 C13,14 3,14 3,12 L3,3 Z" fill="%238B5A2B" fill-opacity="0.7"/><path d="M4,4 L12,4 M4,6 L12,6 M4,8 L12,8 M4,10 L12,10" stroke="white" stroke-width="0.5"/></svg>');
+}
+
+/* Ancient Greek themed radio buttons and checkboxes */
+input[type="radio"].greek-radio {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--primary-dark);
+  border-radius: 50%;
+  outline: none;
+  position: relative;
+}
+
+input[type="radio"].greek-radio:checked::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--primary-dark);
+}
+
+input[type="checkbox"].greek-checkbox {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--primary-dark);
+  outline: none;
+  position: relative;
+}
+
+input[type="checkbox"].greek-checkbox:checked::before {
+  content: "✓";
+  position: absolute;
+  font-size: 14px;
+  color: var(--primary-dark);
+  top: -2px;
+  left: 2px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .post {
+    flex-direction: column;
+  }
+  
+  .post-sidebar {
+    flex: none;
+    margin-right: 0;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .avatar {
+    margin: 0 10px 0 0;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .user-info-container {
+    text-align: left;
+  }
+  
+  .thread-list .thread-last-post {
+    display: none;
+  }
+  
+  .thread-list .thread-stats {
+    display: none;
+  }
+}

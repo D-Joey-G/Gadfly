@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hyper-Platonic Forum - Philosophical Glossary</title>
+  <link rel="stylesheet" href="enhanced_forum_style.css">
+  <style>
+    .glossary-container {
+      margin: 20px;
+    }
+    
+    .glossary-filter {
+      background-color: #F5F5F5;
+      padding: 15px;
+      border: 1px solid #DDD;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      align-items: center;
+    }
+    
+    .filter-input {
+      flex: 1;
+      min-width: 200px;
+      padding: 8px 12px;
+      border: 1px solid #CCC;
+      border-radius: 3px;
+      font-size: 14px;
+    }
+    
+    .letter-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 10px;
+      width: 100%;
+    }
+    
+    .letter-filter {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #E5E5E5;
+      border: 1px solid #CCC;
+      border-radius: 3px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      color: #555;
+    }
+    
+    .letter-filter:hover {
+      background-color: #D5D5D5;
+    }
+    
+    .letter-filter.active {
+      background-color: var(--primary-dark);
+      color: white;
+      border-color: var(--accent-dark);
+    }
+    
+    .alphabet-divider {
+      width: 100%;
+      border-bottom: 1px solid #CCC;
+      margin: 10px 0;
+      position: relative;
+    }
+    
+    .alphabet-letter {
+      position: absolute;
+      left: 0;
+      top: -10px;
+      background-color: var(--primary-dark);
+      color: white;
+      padding: 2px 10px;
+      font-weight: bold;
+      border-radius: 3px;
+    }
+    
+    .term-card {
+      background-color: #FCFCFC;
+      border: 1px solid #DDD;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+    
+    .term-header {
+      background: linear-gradient(to bottom, #E5E5E5, #D5D5D5);
+      padding: 10px 15px;
+      border-bottom: 1px solid #CCC;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .term-name {
+      font-weight: bold;
+      font-size: 16px;
+      color: var(--primary-dark);
+    }
+    
+    .term-origin {
+      font-style: italic;
+      font-size: 12px;
+      color: #666;
+    }
+    
+    .term-body {
+      padding: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    
+    .term-definition {
+      flex: 1;
+      min-width: 300px;
+      line-height: 1.6;
+    }
+    
+    .term-meta {
+      width: 200px;
+    }
+    
+    .term-dialogues {
+      margin-top: 15px;
+    }
+    
+    .term-dialogues h4 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #555;
+      border-bottom: 1px solid #EEE;
+      padding-bottom: 3px;
+    }
+    
+    .term-dialogues ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+    
+    .term-dialogues li {
+      margin-bottom: 5px;
+    }
+    
+    .term-dialogues a {
+      color: var(--highlight);
+      text-decoration: none;
+    }
+    
+    .term-dialogues a:hover {
+      text-decoration: underline;
+    }
+    
+    .term-relations {
+      margin-top: 15px;
+    }
+    
+    .term-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 10px;
+    }
+    
+    .term-tag {
+      background-color: #EEE;
+      padding: 3px 8px;
+      border-radius: 3px;
+      font-size: 12px;
+      color: #555;
+    }
+    
+    .greek-notation {
+      font-style: italic;
+      color: #666;
+      font-size: 90%;
+    }
+    
+    .no-terms {
+      padding: 30px;
+      text-align: center;
+      color: #666;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="forum-container">
+    <div class="forum-header">
+      <div class="breadcrumbs">
+        <a href="index.html">Hyper-Platonic Forum</a> &raquo; 
+        <a href="#">Philosophical Glossary</a>
+      </div>
+      <h1 class="forum-title">Philosophical Glossary</h1>
+      <div class="forum-description">Glossary of key philosophical terms appearing in Plato's dialogues</div>
+    </div>
+    
+    <div class="forum-info">
+      <div>Current time: <b>399 BCE, Month of Thargelion</b></div>
+      <div>Forum rules | FAQ | <a href="search.html">Search</a> | <a href="character_network.html">Character Network</a></div>
+    </div>
+    
+    <div class="glossary-container">
+      <div class="glossary-filter">
+        <input type="text" id="filter-input" class="filter-input" placeholder="Filter by term or definition..." aria-label="Filter terms">
+        
+        <div class="letter-filters" id="letter-filters">
+          <span class="letter-filter active" data-letter="all">All</span>
+          <span class="letter-filter" data-letter="A">A</span>
+          <span class="letter-filter" data-letter="D">D</span>
+          <span class="letter-filter" data-letter="E">E</span>
+          <span class="letter-filter" data-letter="K">K</span>
+          <span class="letter-filter" data-letter="L">L</span>
+          <span class="letter-filter" data-letter="M">M</span>
+          <span class="letter-filter" data-letter="N">N</span>
+          <span class="letter-filter" data-letter="O">O</span>
+          <span class="letter-filter" data-letter="P">P</span>
+          <span class="letter-filter" data-letter="S">S</span>
+          <span class="letter-filter" data-letter="T">T</span>
+        </div>
+      </div>
+      
+      <div id="glossary-terms">
+        <!-- Terms will be populated via JavaScript -->
+        <div class="loading-message">Loading philosophical concepts...</div>
+      </div>
+    </div>
+    
+    <div class="forum-footer">
+      Hyper-Platonic Forum &copy; 399 BCE - 2025 CE &bull; Powered by vPlatonicBB
+    </div>
+  </div>
+  
+  <script src="tooltip_integration.js"></script>
+  <script>
+    // Load and display glossary terms
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const response = await fetch('philosophical_glossary.json');
+        const data = await response.json();
+        const terms = data.terms;
+        
+        // Sort terms alphabetically
+        terms.sort((a, b) => a.term.localeCompare(b.term));
+        
+        displayTerms(terms);
+        
+        // Add event listeners for filtering
+        document.getElementById('filter-input').addEventListener('input', () => {
+          filterTerms(terms);
+        });
+        
+        // Add event listeners for letter filters
+        document.querySelectorAll('.letter-filter').forEach(filter => {
+          filter.addEventListener('click', () => {
+            // Update active state
+            document.querySelectorAll('.letter-filter').forEach(f => {
+              f.classList.remove('active');
+            });
+            filter.classList.add('active');
+            
+            // Filter by letter
+            filterTerms(terms);
+          });
+        });
+      } catch (error) {
+        console.error('Error loading glossary:', error);
+        document.getElementById('glossary-terms').innerHTML = `
+          <div class="error-message">
+            Error loading philosophical concepts. Please try refreshing the page.
+          </div>
+        `;
+      }
+    });
+    
+    // Display terms in the glossary
+    function displayTerms(terms) {
+      const termsContainer = document.getElementById('glossary-terms');
+      
+      if (terms.length === 0) {
+        termsContainer.innerHTML = `
+          <div class="no-terms">
+            No philosophical terms found.
+          </div>
+        `;
+        return;
+      }
+      
+      // Group terms by first letter
+      const groupedTerms = {};
+      terms.forEach(term => {
+        const firstLetter = term.term.charAt(0).toUpperCase();
+        if (!groupedTerms[firstLetter]) {
+          groupedTerms[firstLetter] = [];
+        }
+        groupedTerms[firstLetter].push(term);
+      });
+      
+      // Build HTML for terms
+      let termsHTML = '';
+      
+      Object.keys(groupedTerms).sort().forEach(letter => {
+        termsHTML += `
+          <div class="alphabet-divider">
+            <span class="alphabet-letter">${letter}</span>
+          </div>
+        `;
+        
+        groupedTerms[letter].forEach(term => {
+          // Get related terms
+          const relatedTerms = getRelatedTerms(term, terms);
+          
+          // Generate category tags
+          const categories = getCategoriesForTerm(term);
+          
+          termsHTML += `
+            <div class="term-card" data-term="${term.term.toLowerCase()}">
+              <div class="term-header">
+                <div class="term-name">${term.term} <span class="greek-notation">${getGreekNotation(term.term)}</span></div>
+                <div class="term-origin">Ancient Greek Philosophy</div>
+              </div>
+              <div class="term-body">
+                <div class="term-definition">
+                  ${term.definition}
+                </div>
+                <div class="term-meta">
+                  <div class="term-dialogues">
+                    <h4>Appears in Dialogues:</h4>
+                    <ul>
+                      ${term.related_dialogues.map(dialogue => `
+                        <li><a href="${dialogue.toLowerCase()}_forum.html">${dialogue}</a></li>
+                      `).join('')}
+                    </ul>
+                  </div>
+                  
+                  ${relatedTerms.length > 0 ? `
+                    <div class="term-relations">
+                      <h4>Related Concepts:</h4>
+                      <ul>
+                        ${relatedTerms.map(relatedTerm => `
+                          <li>${relatedTerm}</li>
+                        `).join('')}
+                      </ul>
+                    </div>
+                  ` : ''}
+                  
+                  ${categories.length > 0 ? `
+                    <div class="term-categories">
+                      <h4>Categories:</h4>
+                      <div class="term-tags">
+                        ${categories.map(category => `
+                          <span class="term-tag">${category}</span>
+                        `).join('')}
+                      </div>
+                    </div>
+                  ` : ''}
+                </div>
+              </div>
+            </div>
+          `;
+        });
+      });
+      
+      termsContainer.innerHTML = termsHTML;
+    }
+    
+    // Filter terms based on input and letter filter
+    function filterTerms(terms) {
+      const filterText = document.getElementById('filter-input').value.toLowerCase();
+      const activeLetter = document.querySelector('.letter-filter.active').getAttribute('data-letter');
+      
+      // Filter terms
+      const filteredTerms = terms.filter(term => {
+        // Apply text filter
+        const matchesText = filterText === '' || 
+          term.term.toLowerCase().includes(filterText) || 
+          term.definition.toLowerCase().includes(filterText);
+        
+        // Apply letter filter
+        const matchesLetter = activeLetter === 'all' || 
+          term.term.charAt(0).toUpperCase() === activeLetter;
+        
+        return matchesText && matchesLetter;
+      });
+      
+      // Display filtered terms
+      displayTerms(filteredTerms);
+    }
+    
+    // Get Greek notation for a term
+    function getGreekNotation(term) {
+      // Map of terms to their Greek spellings (simplified for demo)
+      const greekTerms = {
+        'Aretē': 'ἀρετή',
+        'Dialectic': 'διαλεκτική',
+        'Elenchus': 'ἔλεγχος',
+        'Forms': 'εἶδος',
+        'Phronesis': 'φρόνησις',
+        'Sophia': 'σοφία',
+        'Anamnesis': 'ἀνάμνησις',
+        'Aporia': 'ἀπορία',
+        'Dikaiosyne': 'δικαιοσύνη',
+        'Episteme': 'ἐπιστήμη',
+        'Eros': 'ἔρως',
+        'Logos': 'λόγος',
+        'Mimesis': 'μίμησις',
+        'Nous': 'νοῦς',
+        'Psyche': 'ψυχή',
+        'Sophrosyne': 'σωφροσύνη',
+        'Techne': 'τέχνη',
+        'Doxa': 'δόξα',
+        'Demiurge': 'δημιουργός',
+        'Eudaimonia': 'εὐδαιμονία',
+        'Methexis': 'μέθεξις',
+        'Mētis': 'μῆτις',
+        'Ousia': 'οὐσία',
+        'Paideia': 'παιδεία',
+        'Philia': 'φιλία',
+        'Thumos': 'θυμός',
+        'Agathon': 'ἀγαθόν',
+        'Chōra': 'χώρα',
+        'Kalon': 'καλόν',
+        'Aletheia': 'ἀλήθεια'
+      };
+      
+      return greekTerms[term] ? `(${greekTerms[term]})` : '';
+    }
+    
+    // Get related terms based on common dialogues or thematic connections
+    function getRelatedTerms(term, allTerms) {
+      // Find terms that appear in the same dialogues
+      const relatedTerms = allTerms.filter(otherTerm => {
+        if (otherTerm.term === term.term) return false;
+        
+        // Check for shared dialogues
+        const sharedDialogues = otherTerm.related_dialogues.filter(dialogue => 
+          term.related_dialogues.includes(dialogue)
+        );
+        
+        return sharedDialogues.length >= 2;
+      }).map(t => t.term);
+      
+      // Add thematic connections (simplified for demo)
+      const thematicConnections = {
+        'Sophia': ['Phronesis', 'Episteme'],
+        'Phronesis': ['Sophia', 'Aretē'],
+        'Aretē': ['Dikaiosyne', 'Sophrosyne'],
+        'Episteme': ['Doxa', 'Anamnesis'],
+        'Doxa': ['Episteme', 'Aletheia'],
+        'Psyche': ['Nous', 'Eros'],
+        'Eros': ['Kalon', 'Agathon'],
+        'Logos': ['Dialectic', 'Mimesis'],
+        'Forms': ['Methexis', 'Ousia'],
+        'Agathon': ['Kalon', 'Dikaiosyne']
+      };
+      
+      if (thematicConnections[term.term]) {
+        thematicConnections[term.term].forEach(related => {
+          if (!relatedTerms.includes(related)) {
+            relatedTerms.push(related);
+          }
+        });
+      }
+      
+      return relatedTerms.slice(0, 5); // Limit to 5 related terms
+    }
+    
+    // Get categories for a term based on its content and related dialogues
+    function getCategoriesForTerm(term) {
+      const categories = [];
+      
+      // Assign categories based on term content
+      const definition = term.definition.toLowerCase();
+      
+      if (definition.includes('virtue') || definition.includes('moral') || definition.includes('ethics') || definition.includes('justice')) {
+        categories.push('Ethics');
+      }
+      
+      if (definition.includes('knowledge') || definition.includes('truth') || definition.includes('belief')) {
+        categories.push('Epistemology');
+      }
+      
+      if (definition.includes('reality') || definition.includes('being') || definition.includes('form')) {
+        categories.push('Metaphysics');
+      }
+      
+      if (definition.includes('beauty') || definition.includes('art') || definition.includes('representation')) {
+        categories.push('Aesthetics');
+      }
+      
+      if (definition.includes('soul') || definition.includes('spirit') || definition.includes('emotion')) {
+        categories.push('Psychology');
+      }
+      
+      if (definition.includes('love') || definition.includes('friendship') || definition.includes('desire')) {
+        categories.push('Relationships');
+      }
+      
+      if (definition.includes('state') || definition.includes('govern') || definition.includes('polis')) {
+        categories.push('Politics');
+      }
+      
+      if (definition.includes('dialogue') || definition.includes('question') || definition.includes('method')) {
+        categories.push('Methodology');
+      }
+      
+      return categories;
+    }
+  </script>
+</body>
+</html>
